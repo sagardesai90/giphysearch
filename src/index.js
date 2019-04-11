@@ -2,37 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import GifList from './components/GifList';
 import SearchBar from './components/SearchBar';
+import request from 'superagent';
 
 class App extends React.Component {
     constructor() {
         super();
 
         this.state = {
-            gifs: [
-                {
-                    id: 1,
-                    url: 'https://media.giphy.com/media/XZlsb4BRzENr7tlEmN/giphy.gif'
-                },
-                {
-                    id: 2,
-                    url: 'https://media.giphy.com/media/McVXwnNOXfBmFyLkNV/giphy.gif'
-                },
-                {
-                    id: 3,
-                    url: 'https://media.giphy.com/media/LpWR8NmxOSYKDuLvJE/giphy.gif'
-                }
-            ]
-        }
+            gifs: []
+        };
+        this.handleTermChange = this.handleTermChange.bind(this);
     }
     
-    handleTermChange(search){
-        console.log(search);
+    handleTermChange(search) {
+        const url = `http://api.giphy.com/v1/gifs/search?q=${search.replace(/\s/g, '+')}&api_key=d2YvdLWEdDLD9TYsnQnp6Cx03J7leWso`;
+
+        request.get(url, (err, res) => {
+            this.setState({ gifs: res.body.data })
+        });
     }
     
     render() {
         return (
             <div className="greeting">
-                <SearchBar onTermChange={this.handleTermChange}/>
+                <SearchBar onTermChange={search => this.handleTermChange(search)}/>
                 <GifList gifs={this.state.gifs} />
             </div>
         );
