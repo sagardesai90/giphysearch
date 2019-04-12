@@ -5,6 +5,7 @@ import GifModal from './components/GifModal';
 import SearchBar from './components/SearchBar';
 import request from 'superagent';
 import './styles/app.css';
+import giphyAttribution from './styles/PoweredBy_200px-White_HorizLogo.jpg';
 
 class App extends React.Component {
     constructor() {
@@ -43,6 +44,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="greeting">
+                <img src= {giphyAttribution} />
                 <SearchBar onTermChange={search => this.handleTermChange(search)}/>
                 <GifList gifs={this.state.gifs} onGifSelect={selectedGif => this.openModal(selectedGif)} />
                 <GifModal modalIsOpen={this.state.modalIsOpen}
