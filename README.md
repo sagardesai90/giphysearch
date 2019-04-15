@@ -16,3 +16,6 @@ npm cypress:open - runs tests
 ```
 
 Runs the app in development mode. Open http://localhost:3000 to view it in the browser!
+
+You can also find the app at 
+https://searchgiphy.netlify.com/.
