@@ -6,11 +6,13 @@ import GifList from '../components/GifList';
 import GifModal from '../components/GifModal';
 import SearchBar from '../components/SearchBar';
 import '../styles/app.css';
+import giphyAttribution from '../styles/PoweredBy_200px-White_HorizLogo.jpg';
 
 class App extends React.Component {
     render() {
         return (
             <div>
+                <img src={giphyAttribution} />
                 <SearchBar onTermChange={this.props.actions.requestGifs} />
                 <GifList gifs={ this.props.gifs } onGifSelect={ selectedGif => this.props.actions.openModal({selectedGif}) } />
                 <GifModal modalIsOpen={ this.props.modalIsOpen }
