@@ -1,4 +1,7 @@
 import React from 'react';
+import Input from 'antd/lib/input';
+import '../styles/app.css';
+
 
 class SearchBar extends React.Component {
     constructor() {
@@ -14,7 +17,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="search">
-                <input className="search-bar" placeholder="Enter text to search for gifs!" onChange={event => this.onInputChange(event.target.value)} />
+                <Input size="large" className="search-bar" placeholder="Enter text to search for gifs!" onChange={event => this.onInputChange(event.target.value)} />
             </div>
         )
     }

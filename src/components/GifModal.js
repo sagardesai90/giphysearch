@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import Button from 'antd/lib/button';
 
 const GifModal = (props) => {
     if(!props.selectedGif){
@@ -16,7 +17,7 @@ const GifModal = (props) => {
                 <p><strong>Source:</strong> <a href={ props.selectedGif.source }>{ props.selectedGif.source }</a></p>
                 <p><strong>Rating:</strong> { props.selectedGif.rating }</p>
 
-                <button onClick={() => props.onRequestClose()}>close</button>
+                <Button type="danger" onClick={() => props.onRequestClose()}>close</Button>
             </div>
 
         </Modal>
