@@ -3,6 +3,10 @@
     width: 90%;
 }
 
+body {
+    background-color: black;
+  }
+
 .gif-item {
     box-shadow: 2px 2px 4px 0 #ccc;
     box-sizing: border-box;
