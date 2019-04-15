@@ -12,6 +12,7 @@ From the root, run:
 ```
 npm install - installs front end app
 npm start - starts the server
+npm cypress:open - runs tests
 ```
 
 Runs the app in development mode. Open http://localhost:3000 to view it in the browser!
